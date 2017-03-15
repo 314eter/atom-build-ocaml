@@ -1,0 +1,84 @@
+{
+  "name": "Ocamlbuild",
+  "scopeName": "source.ocamlbuild",
+  "fileTypes": ["_tags"],
+  "patterns": [
+    {
+      "match": "#.*$",
+      "name": "comment.line.number-sign.ocamlbuild"
+    }, {
+      "include": "#pattern"
+    }, {
+      "match": ":",
+      "name": "punctuation.definition.identity.ocamlbuild"
+    }, {
+      "match": ",",
+      "name": "punctuation.definition.identity.ocamlbuild"
+    }
+  ],
+  "repository": {
+    "pattern": {
+      "patterns": [
+        {
+          "begin": "<",
+          "end": ">",
+          "name": "string.regexp.ocamlbuild",
+          "patterns": [
+            {
+              "include": "#glob"
+            }
+          ]
+        }, {
+          "match": "\"[^\"]*\"",
+          "name": "string.quoted.double.ocamlbuild"
+        }, {
+          "match": "\\b(or|and|not)\\b",
+          "name": "keyword.operator.ocamlbuild"
+        }, {
+          "match": "\\b(true|false)\\b",
+          "name": "constant.language.ocamlbuild"
+        }, {
+          "begin": "\\(",
+          "end": "\\)",
+          "captures": {
+            "0": {
+              "name": "keyword.control.parentheses.ocamlbuild"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#pattern"
+            }
+          ]
+        }
+      ]
+    },
+    "glob": {
+      "patterns": [
+        {
+          "match": "\\?|/\\*\\*|\\*\\*/|/\\*\\*/|\\*",
+          "name": "constant.numeric.glob.ocamlbuild"
+        }, {
+          "match": "\\[(?:\\^)?[^]]\\]",
+          "name": "string.other.range.ocamlbuild"
+        }, {
+          "begin": "{",
+          "end": "}",
+          "captures": {
+            "0": {
+              "name": "keyword.other.glob.ocamlbuild"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#glob"
+            }, {
+              "match": ",",
+              "name": "keyword.other.glob.ocamlbuild"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
