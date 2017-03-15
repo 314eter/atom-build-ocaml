@@ -1,7 +1,7 @@
 {
   "name": "build-ocaml",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Compile OCaml files with Ocamlbuild",
   "keywords": [
     "ocaml",
@@ -32,7 +32,9 @@
     "ocamlbuildArgs": {
       "title": "Ocamlbuild Arguments",
       "type": "array",
-      "default": ["-use-ocamlfind"],
+      "default": [
+        "-use-ocamlfind"
+      ],
       "order": 2,
       "items": {
         "type": "string"
