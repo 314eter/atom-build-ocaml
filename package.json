@@ -9,7 +9,7 @@
     "compile",
     "ocamlbuild"
   ],
-  "repository": "https://github.com/314eter/atom-build-ocaml",
+  "repository": "https://github.com/atom-ocaml/build-ocaml",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
